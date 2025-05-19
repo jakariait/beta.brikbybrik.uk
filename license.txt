@@ -1,0 +1,5 @@
+Brik by Brik 2025
+All code, templates, and intellectual property contained in this beta release are the property of
+Brik by Brik and may not be copied, distributed, or used for commercial purposes without explicit
+written consent.
+For authorized testing and deployment only.

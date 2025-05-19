@@ -1,9 +1,14 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { calculateTrueMAO } from "@/utils/maoCalculator";
+import { useAuthProtection } from "@/hook/useAuthProtection";
+import LogOutButton from "@/app/component/logOutButton"; // Adjust path
+
+
 export default function NewDeal() {
-  // const router = useRouter();
+
+  const loading = useAuthProtection();
+
   const [form, setForm] = useState({
     address: "",
     gdv: "",
@@ -33,6 +38,9 @@ export default function NewDeal() {
     localStorage.setItem("deals", JSON.stringify(all));
     router.push("/dashboard");
   }
+
+  if (loading) return <p className={"default-layout"}>Loading...</p>;
+
   return (
     <div className={"default-layout"}>
       <h1>Add New Deal</h1>
@@ -81,6 +89,8 @@ export default function NewDeal() {
         <button type="submit">Calculate & Save</button>
       </form>
       {result !== null && <div>True MAO: {result.toLocaleString()}</div>}
+
+      <LogOutButton/>
     </div>
   );
 }
