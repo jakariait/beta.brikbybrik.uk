@@ -6,7 +6,7 @@ import { useAuthProtection } from "@/hook/useAuthProtection";
 import { generateInvestorPDF } from "@/utils/pdfUtils";
 import { exportDealZIP } from "@/utils/zipUtils";
 import { generateOfferLetter } from "@/utils/offerLetter";
-import LogOutButton from "@/app/component/logOutButton";
+import LogOutButton from "@/component/logOutButton";
 
 export default function DealPage() {
   const loading = useAuthProtection();

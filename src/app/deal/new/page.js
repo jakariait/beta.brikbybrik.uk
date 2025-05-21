@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { calculateTrueMAO } from "@/utils/maoCalculator";
 import { useAuthProtection } from "@/hook/useAuthProtection";
-import LogOutButton from "@/app/component/logOutButton"; // Adjust path
+import LogOutButton from "@/component/logOutButton"; // Adjust path
 
 
 export default function NewDeal() {

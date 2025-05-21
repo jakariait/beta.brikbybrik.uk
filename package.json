@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-toggle": "^1.1.9",
     "jspdf": "^3.0.1",
     "jszip": "^3.10.1",
     "next": "15.3.2",

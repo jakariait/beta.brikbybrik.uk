@@ -3,7 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAuthProtection } from "@/hook/useAuthProtection";
-import LogOutButton from "@/app/component/logOutButton"; // Adjust path
+import LogOutButton from "@/component/logOutButton";
+import TrueMAOCalculatorV2 from "@/component/TrueMAOCalculatorV2";
+import SavedCalculations from "@/component/SavedCalculations"; // Adjust path
 
 export default function DashboardPage() {
   const loading = useAuthProtection();
@@ -15,8 +17,6 @@ export default function DashboardPage() {
       setDeals(stored);
     }
   }, [loading]);
-
-
 
   if (loading) return <p className={"default-layout"}>Loading...</p>;
 
@@ -37,7 +37,13 @@ export default function DashboardPage() {
           </li>
         ))}
       </ul>
-      <LogOutButton/>
+
+      <Link href="/deal/v2">
+        <button>Add New Deal V2.0</button>
+      </Link>
+      <SavedCalculations />
+
+      <LogOutButton />
     </div>
   );
 }
